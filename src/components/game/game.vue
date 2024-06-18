@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-const title = "Game"
+import Map from "./map.vue";
+import Player from "./player.vue"
 </script>
 
 <template>
-<div class="game">{{ title }}</div>
+  <div class="game">
+    <Map></Map>
+    <Player></Player>
+  </div>
 </template>
-
-

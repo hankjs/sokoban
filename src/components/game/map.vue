@@ -1,15 +1,20 @@
 <script lang="ts" setup>
-import { useMapStore, MapImg } from "../../store/map";
+import { useMapStore, MapImg, MapTile } from "../../store/map";
 
-
-
-const { map } = useMapStore();
+const { map, setupMap } = useMapStore();
+setupMap([
+  [MapTile.WALL, MapTile.WALL, MapTile.WALL, MapTile.WALL, MapTile.WALL],
+  [MapTile.WALL, MapTile.FLOOR, MapTile.FLOOR, MapTile.FLOOR, MapTile.WALL],
+  [MapTile.WALL, MapTile.FLOOR, MapTile.FLOOR, MapTile.FLOOR, MapTile.WALL],
+  [MapTile.WALL, MapTile.FLOOR, MapTile.FLOOR, MapTile.FLOOR, MapTile.WALL],
+  [MapTile.WALL, MapTile.WALL, MapTile.WALL, MapTile.WALL, MapTile.WALL],
+]);
 </script>
 
 <template>
   <div class="map">
-    <div v-for="row in map" class="row">
-      <div v-for="cell in row" class="cell">
+    <div v-for="row in map" class="flex">
+      <div v-for="cell in row">
         <img :src="MapImg[cell]" alt="" />
       </div>
     </div>
@@ -18,6 +23,5 @@ const { map } = useMapStore();
 
 <style scoped>
 .map {
-  background-color: #666666;
 }
 </style>
