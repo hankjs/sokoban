@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import {useMapStore} from "./store/map"
-const {map} =useMapStore()
+import { useMapStore } from "./store/map"
+const { map } = useMapStore()
 </script>
 
 <template>
-  <div>
+  <h1 class="text-3xl font-bold underline">
     {{ map }}
-  </div>
+  </h1>
 </template>
 
 <style scoped>
@@ -16,9 +16,11 @@ const {map} =useMapStore()
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
