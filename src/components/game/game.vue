@@ -1,17 +1,9 @@
 <script lang="ts" setup>
-import { shallowReactive, shallowRef } from "vue";
-
-defineProps({});
-const emits = defineEmits([]);
-
-const refVar = shallowRef(false);
+const title = "Game"
 </script>
 
 <template>
-<div class="game">Game</div>
+<div class="game">{{ title }}</div>
 </template>
 
-<style scoped>
-.game {
-}
-</style>
+

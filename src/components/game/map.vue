@@ -18,5 +18,6 @@ const { map } = useMapStore();
 
 <style scoped>
 .map {
+  background-color: #666666;
 }
 </style>
