@@ -1,14 +1,7 @@
 <script lang="ts" setup>
-import { useMapStore, MapImg, MapTile } from "../../store/map";
+import { useMapStore, MapImg } from "../../store/map";
 
-const { map, setupMap } = useMapStore();
-setupMap([
-  [MapTile.WALL, MapTile.WALL, MapTile.WALL, MapTile.WALL, MapTile.WALL],
-  [MapTile.WALL, MapTile.FLOOR, MapTile.FLOOR, MapTile.FLOOR, MapTile.WALL],
-  [MapTile.WALL, MapTile.FLOOR, MapTile.FLOOR, MapTile.FLOOR, MapTile.WALL],
-  [MapTile.WALL, MapTile.FLOOR, MapTile.FLOOR, MapTile.FLOOR, MapTile.WALL],
-  [MapTile.WALL, MapTile.WALL, MapTile.WALL, MapTile.WALL, MapTile.WALL],
-]);
+const { map } = useMapStore();
 </script>
 
 <template>

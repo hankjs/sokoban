@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { reactive } from "vue";
 import { useMapStore } from "./map";
+import { useCargoStore } from "./cargo";
 
 interface Player {
   x: number;
@@ -21,6 +22,14 @@ export const usePlayerStore = defineStore("player", () => {
     };
 
     if (isWall(nextPosition)) return;
+    
+    const { findCargo, moveCargo } = useCargoStore();
+    const cargo = findCargo(nextPosition);
+
+    if (cargo) {
+      const isMoveCargo = moveCargo(cargo, dx, dy);
+      if (!isMoveCargo) return;
+    }
 
     player.x += dx;
     player.y += dy;
