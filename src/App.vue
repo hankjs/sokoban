@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { useMapStore } from "./store/map"
-const { map } = useMapStore()
+import Map from "./components/game/map.vue"
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">
-    {{ map }}
-  </h1>
+  <Map></Map>
 </template>
 
 <style scoped>
