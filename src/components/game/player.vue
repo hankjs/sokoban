@@ -13,6 +13,8 @@ import { usePosition } from "../../composables/usePosition";
 useMove();
 const { player } = usePlayerStore();
 const { position } = usePosition(player);
+player.x = 1;
+player.y = 1;
 
 function useMove() {
   const {
